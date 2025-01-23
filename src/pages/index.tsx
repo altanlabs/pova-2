@@ -16,8 +16,8 @@ export default function IndexPage() {
     }
   };
 
-  const handlePrivacyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPrivacy({ ...privacy, [e.target.name]: e.target.checked });
+  const handlePrivacyChange = (checked: boolean, name: string) => {
+    setPrivacy({ ...privacy, [name]: checked });
   };
 
   return (
@@ -51,19 +51,19 @@ export default function IndexPage() {
             <Checkbox
               name="public"
               checked={privacy.public}
-              onCheckedChange={handlePrivacyChange}
+              onCheckedChange={(checked) => handlePrivacyChange(checked, 'public')}
             />
             <label className="text-sm">Public</label>
             <Checkbox
               name="friends"
               checked={privacy.friends}
-              onCheckedChange={handlePrivacyChange}
+              onCheckedChange={(checked) => handlePrivacyChange(checked, 'friends')}
             />
             <label className="text-sm">Friends</label>
             <Checkbox
               name="onlyMe"
               checked={privacy.onlyMe}
-              onCheckedChange={handlePrivacyChange}
+              onCheckedChange={(checked) => handlePrivacyChange(checked, 'onlyMe')}
             />
             <label className="text-sm">Only Me</label>
           </div>
