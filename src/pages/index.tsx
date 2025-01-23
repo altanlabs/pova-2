@@ -55,17 +55,17 @@ export default function IndexPage() {
             </div>
           )}
           <div className="w-full md:w-3/4 space-y-4">
-            <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center w-3/4 mx-auto" />
+            <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center w-3/4" />
             <Input
               type="text"
               placeholder="Add a title that describes your video"
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               maxLength={100}
-              className="border border-gray-300 p-2 rounded-lg w-3/4 mx-auto"
+              className="border border-gray-300 p-2 rounded-lg w-3/4"
             />
             <Select value={privacy} onValueChange={setPrivacy}>
-              <SelectTrigger className="w-3/4 border border-gray-300 rounded-lg mx-auto">
+              <SelectTrigger className="w-3/4 border border-gray-300 rounded-lg">
                 <SelectValue placeholder="Who can view this video" />
               </SelectTrigger>
               <SelectContent>
