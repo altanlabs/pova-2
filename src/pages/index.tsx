@@ -56,7 +56,7 @@ export default function IndexPage() {
           )}
           <div className="w-full md:w-3/4 space-y-4">
             <div className="flex justify-center">
-              <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center" />
+              <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center w-3/4" />
             </div>
             <Input
               type="text"
@@ -64,10 +64,10 @@ export default function IndexPage() {
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               maxLength={100}
-              className="border border-gray-300 p-2 rounded-lg"
+              className="border border-gray-300 p-2 rounded-lg w-3/4"
             />
             <Select value={privacy} onValueChange={setPrivacy}>
-              <SelectTrigger className="w-full border border-gray-300 rounded-lg">
+              <SelectTrigger className="w-3/4 border border-gray-300 rounded-lg">
                 <SelectValue placeholder="Who can view this video" />
               </SelectTrigger>
               <SelectContent>
