@@ -84,7 +84,7 @@ const DefaultHeader: HeaderProps = {
 };
 
 const DefaultFooter: FooterProps = {
-  text: "© 2024 Your Company. All rights reserved.",
+  text: "© 2024 TikTok API Uploader. All rights reserved.",
   links: [
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
