@@ -48,7 +48,9 @@ export default function IndexPage() {
             </div>
           )}
           <div className="w-full md:w-3/4 space-y-6">
-            <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg" />
+            <div className="flex justify-center">
+              <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center" />
+            </div>
             <Input
               type="text"
               placeholder="Add a title that describes your video"
