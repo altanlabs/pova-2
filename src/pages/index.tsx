@@ -27,12 +27,12 @@ export default function IndexPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16 space-y-8">
+    <div className="container mx-auto px-4 py-16">
       <Card className="shadow-lg">
         <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
           <CardTitle className="text-3xl font-bold">TikTok API Uploader</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 p-6">
+        <CardContent className="flex flex-col md:flex-row md:space-x-8 p-6">
           {videoFile && (
             <div className="w-full md:w-1/4">
               <video controls className="w-full rounded-lg shadow-md">
@@ -47,7 +47,7 @@ export default function IndexPage() {
               </div>
             </div>
           )}
-          <div className="w-full md:w-3/4 space-y-6">
+          <div className="w-full md:w-3/4 space-y-4">
             <div className="flex justify-center">
               <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center" />
             </div>
