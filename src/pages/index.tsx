@@ -22,6 +22,10 @@ export default function IndexPage() {
     }
   };
 
+  const handleCheckboxChange = (setter: React.Dispatch<React.SetStateAction<boolean>>) => (checked: boolean | "indeterminate") => {
+    setter(checked === true);
+  };
+
   return (
     <div className="container mx-auto px-4 py-16 space-y-8">
       <Card>
@@ -65,31 +69,31 @@ export default function IndexPage() {
             <div className="flex space-x-4">
               <Checkbox
                 checked={allowComments}
-                onCheckedChange={setAllowComments}
+                onCheckedChange={handleCheckboxChange(setAllowComments)}
               />
               <label className="text-sm">Comment</label>
               <Checkbox
                 checked={allowDuet}
-                onCheckedChange={setAllowDuet}
+                onCheckedChange={handleCheckboxChange(setAllowDuet)}
               />
               <label className="text-sm">Duet</label>
               <Checkbox
                 checked={allowStitch}
-                onCheckedChange={setAllowStitch}
+                onCheckedChange={handleCheckboxChange(setAllowStitch)}
               />
               <label className="text-sm">Stitch</label>
             </div>
             <div className="flex items-center space-x-4">
               <Switch
                 checked={discloseContent}
-                onCheckedChange={setDiscloseContent}
+                onCheckedChange={handleCheckboxChange(setDiscloseContent)}
               />
               <label className="text-sm">Disclose video content</label>
             </div>
             <div className="flex items-center space-x-4">
               <Checkbox
                 checked={brandedContent}
-                onCheckedChange={setBrandedContent}
+                onCheckedChange={handleCheckboxChange(setBrandedContent)}
               />
               <label className="text-sm">Branded content</label>
             </div>
