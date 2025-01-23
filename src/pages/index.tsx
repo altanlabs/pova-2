@@ -32,9 +32,9 @@ export default function IndexPage() {
         <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
           <CardTitle className="text-3xl font-bold">TikTok API Uploader</CardTitle>
         </CardHeader>
-        <CardContent className="flex space-x-8 p-6">
+        <CardContent className="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 p-6">
           {videoFile && (
-            <div className="w-1/3">
+            <div className="w-full md:w-1/3">
               <video controls className="w-full rounded-lg shadow-md">
                 <source src={URL.createObjectURL(videoFile)} type={videoFile.type} />
                 Your browser does not support the video tag.
@@ -47,7 +47,7 @@ export default function IndexPage() {
               </div>
             </div>
           )}
-          <div className="w-2/3 space-y-6">
+          <div className="w-full md:w-2/3 space-y-6">
             <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg" />
             <Input
               type="text"
