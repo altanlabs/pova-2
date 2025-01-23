@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 export default function IndexPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -51,19 +50,19 @@ export default function IndexPage() {
             <Checkbox
               name="public"
               checked={privacy.public}
-              onCheckedChange={(checked) => handlePrivacyChange(checked, 'public')}
+              onCheckedChange={(checked) => handlePrivacyChange(!!checked, 'public')}
             />
             <label className="text-sm">Public</label>
             <Checkbox
               name="friends"
               checked={privacy.friends}
-              onCheckedChange={(checked) => handlePrivacyChange(checked, 'friends')}
+              onCheckedChange={(checked) => handlePrivacyChange(!!checked, 'friends')}
             />
             <label className="text-sm">Friends</label>
             <Checkbox
               name="onlyMe"
               checked={privacy.onlyMe}
-              onCheckedChange={(checked) => handlePrivacyChange(checked, 'onlyMe')}
+              onCheckedChange={(checked) => handlePrivacyChange(!!checked, 'onlyMe')}
             />
             <label className="text-sm">Only Me</label>
           </div>
