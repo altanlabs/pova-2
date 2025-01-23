@@ -28,18 +28,18 @@ export default function IndexPage() {
 
   return (
     <div className="container mx-auto px-4 py-16 space-y-8">
-      <Card>
-        <CardHeader>
-          <CardTitle>Upload to TikTok</CardTitle>
+      <Card className="shadow-lg">
+        <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
+          <CardTitle className="text-3xl font-bold">TikTok API Uploader</CardTitle>
         </CardHeader>
-        <CardContent className="flex space-x-4">
+        <CardContent className="flex space-x-8 p-6">
           {videoFile && (
             <div className="w-1/3">
-              <video controls className="w-full">
+              <video controls className="w-full rounded-lg shadow-md">
                 <source src={URL.createObjectURL(videoFile)} type={videoFile.type} />
                 Your browser does not support the video tag.
               </video>
-              <div className="text-sm text-muted-foreground mt-2">
+              <div className="text-sm text-muted-foreground mt-4">
                 <p>Filename: {videoFile.name}</p>
                 <p>Format: {videoFile.type.split('/')[1].toUpperCase()}</p>
                 <p>Resolution: 1080P</p>
@@ -47,17 +47,18 @@ export default function IndexPage() {
               </div>
             </div>
           )}
-          <div className="w-2/3 space-y-4">
-            <Input type="file" accept="video/*" onChange={handleFileChange} />
+          <div className="w-2/3 space-y-6">
+            <Input type="file" accept="video/*" onChange={handleFileChange} className="border-2 border-dashed border-gray-300 p-4 rounded-lg" />
             <Input
               type="text"
               placeholder="Add a title that describes your video"
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               maxLength={100}
+              className="border border-gray-300 p-2 rounded-lg"
             />
             <Select value={privacy} onValueChange={setPrivacy}>
-              <SelectTrigger className="w-full">
+              <SelectTrigger className="w-full border border-gray-300 rounded-lg">
                 <SelectValue placeholder="Who can view this video" />
               </SelectTrigger>
               <SelectContent>
@@ -97,7 +98,7 @@ export default function IndexPage() {
               />
               <label className="text-sm">Branded content</label>
             </div>
-            <Button variant="default" size="lg">
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
               Upload
             </Button>
           </div>
