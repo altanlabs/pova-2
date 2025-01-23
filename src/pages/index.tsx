@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 import { User } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function IndexPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -75,20 +76,35 @@ export default function IndexPage() {
               </SelectContent>
             </Select>
             <div className="flex space-x-4">
-              <Checkbox
-                checked={allowComments}
-                onCheckedChange={handleCheckboxChange(setAllowComments)}
-              />
+              <Tooltip>
+                <TooltipTrigger>
+                  <Checkbox
+                    checked={allowComments}
+                    onCheckedChange={handleCheckboxChange(setAllowComments)}
+                  />
+                </TooltipTrigger>
+                <TooltipContent>Allow users to comment on your video</TooltipContent>
+              </Tooltip>
               <label className="text-sm">Comment</label>
-              <Checkbox
-                checked={allowDuet}
-                onCheckedChange={handleCheckboxChange(setAllowDuet)}
-              />
+              <Tooltip>
+                <TooltipTrigger>
+                  <Checkbox
+                    checked={allowDuet}
+                    onCheckedChange={handleCheckboxChange(setAllowDuet)}
+                  />
+                </TooltipTrigger>
+                <TooltipContent>Allow users to duet with your video</TooltipContent>
+              </Tooltip>
               <label className="text-sm">Duet</label>
-              <Checkbox
-                checked={allowStitch}
-                onCheckedChange={handleCheckboxChange(setAllowStitch)}
-              />
+              <Tooltip>
+                <TooltipTrigger>
+                  <Checkbox
+                    checked={allowStitch}
+                    onCheckedChange={handleCheckboxChange(setAllowStitch)}
+                  />
+                </TooltipTrigger>
+                <TooltipContent>Allow users to stitch your video</TooltipContent>
+              </Tooltip>
               <label className="text-sm">Stitch</label>
             </div>
             <div className="flex items-center space-x-4">
