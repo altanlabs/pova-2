@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
+import { TikTokLogo } from "lucide-react";
 
 export default function IndexPage() {
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -28,6 +29,12 @@ export default function IndexPage() {
 
   return (
     <div className="container mx-auto px-4 py-16">
+      <div className="flex justify-end mb-4">
+        <Button variant="default" size="lg" className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-red-500 text-white">
+          <TikTokLogo className="h-5 w-5" />
+          <span>Connect to TikTok Account</span>
+        </Button>
+      </div>
       <Card className="shadow-lg">
         <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white">
           <CardTitle className="text-3xl font-bold">TikTok API Uploader</CardTitle>
