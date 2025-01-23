@@ -19,7 +19,7 @@ import NotFound from "./pages/NotFound";
 import DashboardPage from "./pages/dashboard/DashboardPage";
 import { useTheme } from "./theme/use-theme";
 
-const appName = "My app";
+const appName = "TikTok API Uploader";
 
 // Define sidebar configuration
 const dashboardSidebar = {
